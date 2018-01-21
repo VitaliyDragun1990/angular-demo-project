@@ -3,31 +3,19 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-courses',
   template: `
-    <h2>{{ title }}</h2>
-    <div (click)="onDivClicked()">
-      <button (click)="onSave($event)">Save</button>
-    </div>
-    <input [value]="email" type="text" (keyup.enter)="email = $event.target.value; onKeyUp()">
-    <input [(ngModel)]="email" type="text" (keyup.enter)="onKeyUp()">
+    {{ course.title | uppercase | lowercase }} <br>
+    {{ course.students | number  }} <br>
+    {{ course.rating | number: '1.2-2' }} <br>
+    {{ course.price | currency:'AUD':'symbol':'3.2-2'}} <br>
+    {{ course.releaseDate | date: 'shortDate'}} <br>
   `
 })
 export class CoursesComponent {
-  title = 'List of courses';
-  imageUrl = 'http://lorempixel.com/400/200';
-  colSpan = 2;
-  isActive = false;
-  email = 'me@wxample.com';
-
-  onSave($event) {
-    $event.stopPropagation();
-    console.log('Button was clicked', $event);
-  }
-
-  onDivClicked() {
-    console.log('Div was clicked');
-  }
-
-  onKeyUp() {
-    console.log(this.email);
-  }
+  course = {
+    title: 'The Complete Angular Course',
+    rating: 4.9745,
+    students: 30123,
+    price: 190.95,
+    releaseDate: new Date(2016, 3, 1)
+  };
 }
