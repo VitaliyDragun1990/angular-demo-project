@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular app';
+  post = {
+    title: 'Title',
+    isFavorite: true
+  };
+  imageUrl = '';
+
+  onClick() {
+
+  }
+
+  onFavoriteChange(eventArgs: FavoriteChangedEventArgs) {
+    console.log('Favorite changed: ', eventArgs.newValue);
+  }
 }
