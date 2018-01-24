@@ -11,13 +11,14 @@ import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    CourseComponent, SummaryPipe, FavoriteComponent, PanelComponent, InputFormatDirective
+    CourseComponent, SummaryPipe, FavoriteComponent, PanelComponent, InputFormatDirective, ContactFormComponent
   ],
   imports: [
     BrowserModule,
