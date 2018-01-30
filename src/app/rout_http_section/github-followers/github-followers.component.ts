@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubFollowersService } from '../services/github-followers.service';
+import { GithubFollowersService } from '../../services/github-followers.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/combineLatest';
